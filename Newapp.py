@@ -156,16 +156,15 @@ if not valid:
     st.error(error_message)
 else:
     st.success("Dimensions validated successfully.")
-
-if st.button("Calculate"):
-    if not valid:
-        st.error("Please resolve the validation error before calculating.")
-    else:
+    
+    if st.button("Calculate"):
         if load_type == "Point Load":
             (Rotation, Deflection), X = calcDeflectionPointLoad(P, L, a, EI, delX)
         else:
             (Rotation, Deflection), X = calcDeflectionUDL(w, L, start, end, EI, delX)
             
+
+
     # Create a dataframe to display the results
     results = pd.DataFrame({
         'Position (m)': X,

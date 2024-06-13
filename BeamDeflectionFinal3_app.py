@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
 
 # Function to calculate moment of inertia
 def calcMomentOfInertia(shape, dimensions):
@@ -113,9 +115,9 @@ load_type = st.selectbox("Select the load type:", ["Point Load", "Uniformly Dist
 
 # Display images based on load type
 if load_type == "Point Load":
-    st.image("images/Point_load1.png", caption="Point Load", use_column_width=True)
+    st.image("images/point_load.png", caption="Point Load", use_column_width=True)
 else:
-    st.image("images/Uniform_load1.png", caption="Uniformly Distributed Load", use_column_width=True)
+    st.image("images/uniform_load.png", caption="Uniformly Distributed Load", use_column_width=True)
 
 P = None
 a = None
@@ -142,33 +144,3 @@ if st.button("Calculate"):
         'Position (m)': X,
         'Rotation (radians)': Rotation,
         'Deflection (m)': Deflection
-    })
-
-    st.markdown("<h2 style='color:green;'>Results</h2>", unsafe_allow_html=True)
-    st.dataframe(results)
-
-    # Plot the results
-    fig, ax1 = plt.subplots()
-
-    color = 'tab:red'
-    ax1.set_xlabel('Position (m)')
-    ax1.set_ylabel('Deflection (m)', color=color)
-    ax1.plot(X, Deflection, color=color)
-    ax1.tick_params(axis='y', labelcolor=color)
-
-    ax2 = ax1.twinx()
-    color = 'tab:blue'
-    ax2.set_ylabel('Rotation (radians)', color=color)
-    ax2.plot(X, Rotation, color=color)
-    ax2.tick_params(axis='y', labelcolor=color)
-
-    fig.tight_layout()
-
-    st.pyplot(fig)
-
-    st.markdown("""
-    <div style="background-color:lightgreen;padding:10px;border-radius:10px;">
-    <h4>Note:</h4>
-    <p>The deflection and rotation values are approximate and calculated based on the provided inputs. Please ensure the inputs are accurate for better results.</p>
-    </div>
-    """, unsafe_allow_html=True)

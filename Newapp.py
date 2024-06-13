@@ -159,11 +159,15 @@ else:
     
     if st.button("Calculate"):
         if load_type == "Point Load":
+             X = np.arange(0, L + delX, delX)
             (Rotation, Deflection), X = calcDeflectionPointLoad(P, L, a, EI, delX)
         else:
+             X = np.arange(0, L + delX, delX)
             (Rotation, Deflection), X = calcDeflectionUDL(w, L, start, end, EI, delX)
 
-         # Create a dataframe to display the results
+
+
+# Create a dataframe to display the results
     results = pd.DataFrame({
         'Position (m)': X,
         'Rotation (radians)': Rotation,
@@ -202,12 +206,3 @@ else:
     </ul>
     </div>
     """, unsafe_allow_html=True)
-
-            
-
-
-   
-
-
-
-

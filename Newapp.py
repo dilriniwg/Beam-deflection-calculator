@@ -111,6 +111,7 @@ st.markdown(
         margin-left: 300px;
         margin-right: auto;
         margin-top: 20px;
+        margin-down:20px;
     }
     """,
     unsafe_allow_html=True

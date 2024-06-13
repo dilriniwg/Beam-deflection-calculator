@@ -195,7 +195,7 @@ else:
 
         st.plotly_chart(fig)
 
-         st.markdown("""
+        st.markdown("""
         <div style="background-color:lightgreen;padding:10px;border-radius:10px;">
         <h4>Note:</h4>
         <ul>

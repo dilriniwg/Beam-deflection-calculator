@@ -159,50 +159,52 @@ else:
     
     if st.button("Calculate"):
         if load_type == "Point Load":
-             X = np.arange(0, L + delX, delX)
+            X = np.arange(0, L + delX, delX)
             (Rotation, Deflection), X = calcDeflectionPointLoad(P, L, a, EI, delX)
         else:
-             X = np.arange(0, L + delX, delX)
+            X = np.arange(0, L + delX, delX)
             (Rotation, Deflection), X = calcDeflectionUDL(w, L, start, end, EI, delX)
 
+        # Create a dataframe to display the results
+        results = pd.DataFrame({
+            'Position (m)': X,
+            'Rotation (radians)': Rotation,
+            'Deflection (m)': Deflection
+        })
+        
+        st.write("### Results:")
+        st.dataframe(results)
 
+        # Plot the results using Plotly for better interactivity
+        fig = go.Figure()
 
-# Create a dataframe to display the results
-    results = pd.DataFrame({
-        'Position (m)': X,
-        'Rotation (radians)': Rotation,
-        'Deflection (m)': Deflection
-    })
-    
-    st.write("### Results:")
-    st.dataframe(results)
+        fig.add_trace(go.Scatter(x=X, y=Deflection, mode='lines', name='Deflection (m)', line=dict(color='firebrick', width=4)))
+        fig.add_trace(go.Scatter(x=X, y=Rotation, mode='lines', name='Rotation (radians)', line=dict(color='royalblue', width=4)))
 
-    # Plot the results using Plotly for better interactivity
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(x=X, y=Deflection, mode='lines', name='Deflection (m)', line=dict(color='firebrick', width=4)))
-    fig.add_trace(go.Scatter(x=X, y=Rotation, mode='lines', name='Rotation (radians)', line=dict(color='royalblue', width=4)))
-
-    fig.update_layout(
-        title="Beam Deflection and Rotation",
-        xaxis_title="Position (m)",
-        yaxis_title="Value",
-        legend_title="Legend",
-        font=dict(
-            family="Courier New, monospace",
-            size=14,
-            color="RebeccaPurple"
+        fig.update_layout(
+            title="Beam Deflection and Rotation",
+            xaxis_title="Position (m)",
+            yaxis_title="Value",
+            legend_title="Legend",
+            font=dict(
+                family="Courier New, monospace",
+                size=14,
+                color="RebeccaPurple"
+            )
         )
-    )
 
-    st.plotly_chart(fig)
+        st.plotly_chart(fig)
 
-    st.markdown("""
-    <div style="background-color:lightgreen;padding:10px;border-radius:10px;">
-    <h4>Note:</h4>
-    <ul>
-    <li>The position, rotation, and deflection values are calculated and displayed in the table above.</li>
-    <li>The plot shows the rotation (blue line) and deflection (red line) of the beam along its length.</li>
-    </ul>
-    </div>
-    """, unsafe_allow_html=True)
+         st.markdown("""
+        <div style="background-color:lightgreen;padding:10px;border-radius:10px;">
+        <h4>Note:</h4>
+        <ul>
+        <li>The position, rotation, and deflection values are calculated and displayed in the table above.</li>
+        <li>The plot shows the rotation (blue line) and deflection (red line) of the beam along its length.</li>
+        </ul>
+        </div>
+        """, unsafe_allow_html=True)
+       
+
+
+   

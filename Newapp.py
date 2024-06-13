@@ -143,10 +143,12 @@ end = None
 if load_type == "Point Load":
     P = st.number_input("Enter the magnitude of the point load (P) in Newtons:", value=1000.0)
     a = st.number_input("Enter the distance from the left support to the point load (a) in meters:", value=5.0)
+    dimensions = [a]
 else:
     w = st.number_input("Enter the magnitude of the uniformly distributed load (w) in N/m:", value=500.0)
     start = st.number_input("Enter the start position of the uniform load (m):", value=2.0)
     end = st.number_input("Enter the end position of the uniform load (m):", value=8.0)
+    dimensions = [start, end]
 
 valid, error_message = validate_measurements(shape, dimensions, load_type, L)
 

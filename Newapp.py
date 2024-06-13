@@ -100,11 +100,11 @@ with col1:
 st.markdown(
     """
     <style>
-    div[class="stImageContainer"] {
-        display: flex;
-        justify-content: center;
+    .stImage > img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
-    </style>
     """,
     unsafe_allow_html=True
 )

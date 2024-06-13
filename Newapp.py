@@ -98,22 +98,22 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
-
-# Apply CSS styling to center align the image
 st.markdown(
     """
     <style>
     .stImage > img {
         display: block;
-        margin-left: 300px;
+        margin-left: auto;
         margin-right: auto;
-        margin-top: 20px;
-        margin-down:20px;
+        margin-top: 20px; /* Adjust the top margin as needed */
     }
+    </style>
     """,
     unsafe_allow_html=True
 )
+
+# Display fixed end beam image
+st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
 
 shape = st.selectbox("Select the cross-sectional shape of the beam:", ["Circle", "Square", "Rectangle", "I-Beam"])
 

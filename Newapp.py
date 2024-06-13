@@ -3,6 +3,23 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
+# Function to validate measurements
+def validate_measurements(shape, dimensions, load_type, beam_length):
+    if any(d < 0 for d in dimensions):
+        return False, "Dimensions cannot be negative."
+
+    if load_type == "Uniformly Distributed Load":
+        start, end = dimensions[0], dimensions[1]
+        if start > end:
+            return False, "Start of load cannot be after end of load."
+
+    elif load_type == "Point Load":
+        a = dimensions[0]
+        if a > beam_length:
+            return False, "Point load position cannot exceed the length of the beam."
+
+    return True, ""
+
 # Function to calculate moment of inertia
 def calcMomentOfInertia(shape, dimensions):
     if shape == 'Circle':
@@ -130,6 +147,13 @@ else:
     w = st.number_input("Enter the magnitude of the uniformly distributed load (w) in N/m:", value=500.0)
     start = st.number_input("Enter the start position of the uniform load (m):", value=2.0)
     end = st.number_input("Enter the end position of the uniform load (m):", value=8.0)
+
+valid, error_message = validate_measurements(shape, dimensions, load_type, L)
+
+if not valid:
+    st.error(error_message)
+else:
+    st.success("Dimensions validated successfully.")
 
 if st.button("Calculate"):
     if load_type == "Point Load":

@@ -89,8 +89,6 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 
     return Rotation, Deflection
 
-st.image("images/fixed_ends.jpg", caption="Fixed end beam", use_column_width=True)
-
 # Streamlit UI
 st.markdown("<h1 style='color:blue;'>Beam Deflection Calculator</h1>", unsafe_allow_html=True)
 
@@ -100,6 +98,10 @@ This application calculates the deflection and rotation of a beam that is suppor
 and other parameters. Please select the appropriate options and enter the required values to see the results.
 </div>
 """, unsafe_allow_html=True)
+
+col1, col2 = st.columns([1, 3])
+with col1:
+    st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=200)
 
 shape = st.selectbox("Select the cross-sectional shape of the beam:", ["Circle", "Square", "Rectangle", "I-Beam"])
 

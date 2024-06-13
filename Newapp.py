@@ -91,7 +91,13 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 
 st.markdown("<h1 style='color:blue;text-align:center;'>Beam Deflection Calculator</h1>", unsafe_allow_html=True)
 
-# Display fixed end beam image and opening paragraph in the first column
+st.markdown("""
+    <div style="background-color:lightblue;padding:10px;border-radius:10px;">
+    This application calculates the deflection and rotation of a beam that is supported by two fixed ends based on its cross-sectional shape, load type, 
+    and other parameters. Please select the appropriate options and enter the required values to see the results.
+    </div>
+    """, unsafe_allow_html=True)
+
 col1, col2 = st.columns([1, 3])
 with col1:
     st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
@@ -108,13 +114,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.markdown("""
-    <div style="background-color:lightblue;padding:10px;border-radius:10px;">
-    This application calculates the deflection and rotation of a beam that is supported by two fixed ends based on its cross-sectional shape, load type, 
-    and other parameters. Please select the appropriate options and enter the required values to see the results.
-    </div>
-    """, unsafe_allow_html=True)
 
 shape = st.selectbox("Select the cross-sectional shape of the beam:", ["Circle", "Square", "Rectangle", "I-Beam"])
 

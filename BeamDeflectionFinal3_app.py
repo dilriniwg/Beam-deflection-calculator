@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import plotly.express as px
 import plotly.graph_objects as go
 
 # Function to calculate moment of inertia
@@ -115,9 +114,9 @@ load_type = st.selectbox("Select the load type:", ["Point Load", "Uniformly Dist
 
 # Display images based on load type
 if load_type == "Point Load":
-    st.image("images/point_load.png", caption="Point Load", use_column_width=True)
+    st.image("images/point_load1.png", caption="Point Load", use_column_width=True)
 else:
-    st.image("images/uniform_load.png", caption="Uniformly Distributed Load", use_column_width=True)
+    st.image("images/uniform_load1.png", caption="Uniformly Distributed Load", use_column_width=True)
 
 P = None
 a = None
@@ -144,3 +143,37 @@ if st.button("Calculate"):
         'Position (m)': X,
         'Rotation (radians)': Rotation,
         'Deflection (m)': Deflection
+    })
+    
+    st.write("### Results:")
+    st.dataframe(results)
+
+    # Plot the results using Plotly for better interactivity
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(x=X, y=Deflection, mode='lines', name='Deflection (m)', line=dict(color='firebrick', width=4)))
+    fig.add_trace(go.Scatter(x=X, y=Rotation, mode='lines', name='Rotation (radians)', line=dict(color='royalblue', width=4)))
+
+    fig.update_layout(
+        title="Beam Deflection and Rotation",
+        xaxis_title="Position (m)",
+        yaxis_title="Deflection (m)",
+        legend_title="Legend",
+        font=dict(
+            family="Courier New, monospace",
+            size=14,
+            color="RebeccaPurple"
+        )
+    )
+
+    st.plotly_chart(fig)
+
+    st.markdown("""
+    <div style="background-color:lightgreen;padding:10px;border-radius:10px;">
+    <h4>Note:</h4>
+    <ul>
+    <li>The position, rotation, and deflection values are calculated and displayed in the table above.</li>
+    <li>The plot shows the rotation (blue line) and deflection (red line) of the beam along its length.</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)

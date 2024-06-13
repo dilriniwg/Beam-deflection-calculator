@@ -7,18 +7,21 @@ import matplotlib.pyplot as plt
 def calcMomentOfInertia(shape, dimensions, E):
     if shape == 'Circle':
         d = dimensions[0]
-        I = (np.pi * d**4) / (64 * E)
+        I = (np.pi * d**4) / 64
     elif shape == 'Square':
         a = dimensions[0]
-        I = (a**4) / (12 * E)
+        I = (a**4) / 12
     elif shape == 'Rectangle':
         b, h = dimensions
-        I = (b * h**3) / (12 * E)
+        I = (b * h**3) / 12
     elif shape == 'I-Beam':
         b_f, h_f, b_w, h_w = dimensions
-        I_f = (b_f * h_f**3) / (12 * E)
-        I_w = (b_w * h_w**3) / (12 * E)
+        I_f = (b_f * h_f**3) / 12
+        I_w = (b_w * h_w**3) / 12
         I = 2 * I_f + I_w  # Simplified for demonstration
+    
+    I *= E  # Multiply by Young's modulus
+    
     return I
 
 # Function to calculate deflection and rotation for point load
@@ -72,8 +75,8 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 st.title("Beam Deflection Calculator")
 
 st.write("""
-This application calculates the deflection and rotation of a beam based on its cross-sectional shape, load type, 
-and other parameters. Please select the appropriate options and enter the required values to see the results.
+This application calculates the deflection and rotation of a beam based on its cross-sectional shape, Young's modulus (E),
+load type, and other parameters. Please select the appropriate options and enter the required values to see the results.
 """)
 
 shape = st.selectbox("Select the cross-sectional shape of the beam:", ["Circle", "Square", "Rectangle", "I-Beam"])
@@ -95,7 +98,8 @@ elif shape == 'I-Beam':
     h_w = st.number_input("Enter the web height (h_w) in meters:", value=0.1)
     dimensions = [b_f, h_f, b_w, h_w]
 
-E = st.number_input("Enter the Young's modulus (E) of the material in Pa:", value=21000000.0)
+E = st.number_input("Enter the Young's modulus (E) in Pa:", value=21000000.0)
+
 I = calcMomentOfInertia(shape, dimensions, E)
 
 L = st.number_input("Enter the length of the beam (L) in meters:", value=10.0)

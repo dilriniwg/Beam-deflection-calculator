@@ -89,7 +89,7 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 
     return Rotation, Deflection
 
-st.image("images/fixed_ends.png", caption="Fixed end beam", use_column_width=True)
+st.image("images/fixed_ends.jpg", caption="Fixed end beam", use_column_width=True)
 
 # Streamlit UI
 st.markdown("<h1 style='color:blue;'>Beam Deflection Calculator</h1>", unsafe_allow_html=True)

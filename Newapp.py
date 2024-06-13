@@ -108,8 +108,9 @@ st.markdown(
     <style>
     .stImage > img {
         display: block;
-        margin-left: auto;
+        margin-left: 300px;
         margin-right: auto;
+        margin-top: 20px;
     }
     """,
     unsafe_allow_html=True

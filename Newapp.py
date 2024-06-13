@@ -101,7 +101,7 @@ and other parameters. Please select the appropriate options and enter the requir
 
 st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(3)
 
 shape = st.selectbox("Select the cross-sectional shape of the beam:", ["Circle", "Square", "Rectangle", "I-Beam"])
 

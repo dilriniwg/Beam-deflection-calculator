@@ -98,9 +98,7 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-col1, col2 = st.columns([1, 3])
-with col1:
-    st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
+st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
 
 # Apply CSS styling to center align the image
 st.markdown(

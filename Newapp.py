@@ -163,7 +163,7 @@ else:
         else:
             (Rotation, Deflection), X = calcDeflectionUDL(w, L, start, end, EI, delX)
 
- # Create a dataframe to display the results
+         # Create a dataframe to display the results
     results = pd.DataFrame({
         'Position (m)': X,
         'Rotation (radians)': Rotation,
@@ -207,3 +207,7 @@ else:
 
 
    
+
+
+
+

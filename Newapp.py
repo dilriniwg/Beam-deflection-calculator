@@ -103,7 +103,7 @@ st.markdown(
     <style>
     .stImage > img {
         display: block;
-        margin-left: auto;
+        margin-left: 200px;
         margin-right: auto;
         margin-top: 20px; /* Adjust the top margin as needed */
     }

@@ -99,9 +99,9 @@ and other parameters. Please select the appropriate options and enter the requir
 </div>
 """, unsafe_allow_html=True)
 
-col1, col2 = st.columns([1, 3])
-with col1:
-    st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=200)
+st.image("images/fixed_ends.jpg", caption="Fixed end beam", width=300)
+
+col1, col2 = st.columns(2)
 
 shape = st.selectbox("Select the cross-sectional shape of the beam:", ["Circle", "Square", "Rectangle", "I-Beam"])
 

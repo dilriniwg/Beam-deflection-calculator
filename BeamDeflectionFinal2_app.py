@@ -102,6 +102,9 @@ E = st.number_input("Enter the Young's modulus (E) in Pa:", value=21000000.0)
 
 I = calcMomentOfInertia(shape, dimensions, E)
 
+# Display the calculated moment of inertia (I)
+st.write(f"### Calculated Moment of Inertia (I): {I:.2f} m^4")
+
 L = st.number_input("Enter the length of the beam (L) in meters:", value=10.0)
 delX = st.number_input("Enter the step size (delX) in meters:", value=0.1)
 load_type = st.selectbox("Select the load type:", ["Point Load", "Uniformly Distributed Load"])

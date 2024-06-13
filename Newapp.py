@@ -109,7 +109,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
- st.markdown("""
+st.markdown("""
     <div style="background-color:lightblue;padding:10px;border-radius:10px;">
     This application calculates the deflection and rotation of a beam that is supported by two fixed ends based on its cross-sectional shape, load type, 
     and other parameters. Please select the appropriate options and enter the required values to see the results.

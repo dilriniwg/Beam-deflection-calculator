@@ -113,9 +113,9 @@ load_type = st.selectbox("Select the load type:", ["Point Load", "Uniformly Dist
 
 # Display images based on load type
 if load_type == "Point Load":
-    st.image("images/point_load1.png", caption="Point Load", use_column_width=True)
+    st.image("images/Point_load1.png", caption="Point Load", use_column_width=True)
 else:
-    st.image("images/uniform_load1.png", caption="Uniformly Distributed Load", use_column_width=True)
+    st.image("images/Uniform_load1.png", caption="Uniformly Distributed Load", use_column_width=True)
 
 P = None
 a = None

@@ -92,7 +92,7 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 st.markdown("""
     <style>
     body {
-        background-color: #f0f8ff; /* Light blue background */
+        background-color: #f0f8ff; /* Default light blue background */
         color: #333; /* Dark gray text */
     }
     .st-bw, .st-cn, .st-cp, .st-af {
@@ -104,21 +104,38 @@ st.markdown("""
     .st-cq {
         background-color: #fff !important; /* White background for Streamlit chart elements */
     }
+    .sidebar .sidebar-content {
+        background-color: #f0f0f5; /* Light gray sidebar background */
+    }
+    .main-content {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .home-page {
+        background-color: #f0f8ff; /* Light blue background for Home page */
+    }
+    .calculator-page {
+        background-color: #d3e0ea; /* Light blue-gray background for Calculator page */
+    }
+    .tutorials-page {
+        background-color: #e7f2f8; /* Light blue background for Tutorials page */
+    }
+    .examples-page {
+        background-color: #f0e8dc; /* Light beige background for Examples page */
+    }
+    .about-page {
+        background-color: #e1f7d5; /* Light green background for About page */
+    }
+    .page-title {
+        text-align: center;
+        color: #007bff; /* Blue title color */
+    }
     </style>
     """, unsafe_allow_html=True)
 
 
 
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: lightblue;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 
 # Adding a sidebar for navigation

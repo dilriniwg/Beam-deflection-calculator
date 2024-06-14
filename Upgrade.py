@@ -312,4 +312,4 @@ elif page == "Examples":
 elif page == "About":
     st.title("About")
     st.write("This app was developed to assist students in learning and applying the principles of beam deflection. It provides accurate calculations and educational resources to enhance understanding.")
-    st.image("images/students2.jpeg", use_column_width=1100)
+    st.image("images/students2.jpeg", width=1100)

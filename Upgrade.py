@@ -96,7 +96,7 @@ page = st.sidebar.selectbox("Choose a page", ["Home", "Beam Deflection Calculato
 if page == "Home":
     st.title("Welcome to the Beam Deflection Calculator App")
     st.write("This app helps students calculate beam deflection easily and accurately.")
-    st.image("Home.jpg", use_column_width=True)
+    st.image("Home.jpg", use_column_width=400)
 
 elif page == "Beam Deflection Calculator":
     st.markdown("<h1 style='color:blue;text-align:center;'>Beam Deflection Calculator</h1>", unsafe_allow_html=True)

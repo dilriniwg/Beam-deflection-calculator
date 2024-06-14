@@ -89,28 +89,6 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 
     return Rotation, Deflection
 
-st.markdown("""
-    <style>
-    body {
-        background-color: #f0f8ff; /* Light blue background */
-        color: #333; /* Dark gray text */
-    }
-    .st-bw, .st-cn, .st-cp {
-        color: #333; /* Dark gray text for Streamlit components */
-    }
-    .st-af {
-        color: #000; /* Black text for Streamlit footer */
-    }
-    .st-dd {
-        background-color: #fff; /* White background for Streamlit dropdowns */
-    }
-    .st-cq {
-        background-color: #fff; /* White background for Streamlit chart elements */
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-
 
 # Adding a sidebar for navigation
 st.sidebar.title("Navigation")

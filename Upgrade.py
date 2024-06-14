@@ -89,6 +89,17 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 
     return Rotation, Deflection
 
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: lightblue;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Adding a sidebar for navigation
 st.sidebar.title("Navigation")

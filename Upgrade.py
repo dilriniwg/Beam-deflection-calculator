@@ -89,6 +89,7 @@ def calcDeflection(M, EI, delX, theta_0, v_0, supportIndexA):
 
     return Rotation, Deflection
 
+# Always start in night mode
 night_mode = True
 
 # Custom CSS for night mode
@@ -97,7 +98,7 @@ if night_mode:
         """
         <style>
         body {
-            background-color: #1a1a1a;
+            background-color: #000000;
             color: white;
         }
         .st-bd {

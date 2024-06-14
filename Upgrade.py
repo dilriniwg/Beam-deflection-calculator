@@ -110,32 +110,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Always start in night mode
-night_mode = True
-
-# Custom CSS for night mode
-if night_mode:
-    st.markdown(
-        """
-        <style>
-        body {
-            background-color: #000000;
-            color: white;
-        }
-        .st-bd {
-            color: white;
-        }
-        .st-ae {
-            background-color: #2b2b2b !important;
-        }
-        .st-bj {
-            color: white !important;
-            background-color: #2b2b2b !important;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
 
 
 # Adding a sidebar for navigation

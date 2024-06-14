@@ -244,15 +244,16 @@ elif page == "Tutorials":
 
     ### Common Formulas
     The deflection (\(\delta\)) of a beam under a point load can be calculated using:
-    \[
-    \delta = \frac{P L^3}{48 E I}
-    \]
+    """)
+    st.latex(r"\delta = \frac{P L^3}{48 E I}")
+    st.markdown("""
     where:
     - \(P\) is the load applied,
     - \(L\) is the length of the beam,
     - \(E\) is the modulus of elasticity,
     - \(I\) is the moment of inertia.
     """)
+
 
     st.subheader("Step-by-Step Guide")
     st.markdown("""

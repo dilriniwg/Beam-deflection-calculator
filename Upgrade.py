@@ -289,10 +289,9 @@ elif page == "Examples":
     - **Moment of Inertia (I):** 8.5 x 10^-6 m^4
 
     **Calculation:**
-    \[
-    \delta = \frac{5000 \times 10^3}{48 \times 210 \times 10^9 \times 8.5 \times 10^{-6}}
-    \]
-
+    """)
+    st.latex(r"\delta = \frac{5000 \times 10^3}{48 \times 210 \times 10^9 \times 8.5 \times 10^{-6}}")
+    st.markdown("""
     **Result:** The deflection is approximately 0.28 mm.
 
     #### Example 2: Cantilever Beam with Uniform Load
@@ -302,10 +301,9 @@ elif page == "Examples":
     - **Moment of Inertia (I):** 5 x 10^-6 m^4
 
     **Calculation:**
-    \[
-    \delta = \frac{5 w L^4}{384 E I}
-    \]
-
+    """)
+    st.latex(r"\delta = \frac{w L^4}{8 E I}")
+    st.markdown("""
     **Result:** The deflection is approximately 2.17 mm.
     """)
 

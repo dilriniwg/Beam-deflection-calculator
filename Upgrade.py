@@ -229,6 +229,87 @@ elif page == "Beam Deflection Calculator":
             </ul>
             </div>
             """, unsafe_allow_html=True)
+
+elif page == "Tutorials":
+    st.title("Tutorials")
+    st.subheader("Understanding Beam Deflection")
+
+    st.markdown("""
+    ### What is Beam Deflection?
+    Beam deflection refers to the bending or displacement of a beam under a load. Understanding this concept is crucial for structural engineering students as it helps in designing safe and efficient structures.
+
+    ### Basic Principles
+    - **Elastic Deformation:** The beam returns to its original shape after the load is removed.
+    - **Plastic Deformation:** The beam does not return to its original shape after the load is removed.
+
+    ### Common Formulas
+    The deflection (\(\delta\)) of a beam under a point load can be calculated using:
+    \[
+    \delta = \frac{P L^3}{48 E I}
+    \]
+    where:
+    - \(P\) is the load applied,
+    - \(L\) is the length of the beam,
+    - \(E\) is the modulus of elasticity,
+    - \(I\) is the moment of inertia.
+    """)
+
+    st.subheader("Step-by-Step Guide")
+    st.markdown("""
+    1. Identify the type of beam and loading conditions.
+    2. Gather all necessary parameters (length, load, material properties).
+    3. Input these parameters into the calculator.
+    4. Analyze the output results.
+    """)
+
+    st.subheader("Online Video Tutorials")
+    st.markdown("### Point Load")
+    st.video("https://youtu.be/tukCIr0Q7So?si=kGbM3068kIcoIRDY")
+
+    st.markdown("### Eccentric Load")
+    st.video("https://youtu.be/nKOa8QHO1yg?si=SXs3pTX8n7z-eKpQ")
+
+    st.markdown("### Uniformly Distributed Load (Whole Span)")
+    st.video("https://youtu.be/HrjYIkudW1s?si=3tvGU5kbWIBf1i_Z")
+
+    st.markdown("### UDL for a Distance")
+    st.video("https://youtu.be/bumUStA1nnU?si=739wCjz0LeY9kxfy")
+
+    st.markdown("### UDL Intermediate Span")
+    st.video("https://youtu.be/nNTEcz6iNJ0?si=onVQrslmJk8SkaS3")
+
+elif page == "Examples":
+    st.title("Examples")
+    st.subheader("Example Calculations")
+    st.markdown("""
+    #### Example 1: Simply Supported Beam with Central Point Load
+    - **Beam Length (L):** 10 meters
+    - **Load (P):** 5000 Newtons
+    - **Modulus of Elasticity (E):** 210 GPa
+    - **Moment of Inertia (I):** 8.5 x 10^-6 m^4
+
+    **Calculation:**
+    \[
+    \delta = \frac{5000 \times 10^3}{48 \times 210 \times 10^9 \times 8.5 \times 10^{-6}}
+    \]
+    **Result:** The deflection is approximately 0.28 mm.
+
+    #### Example 2: Cantilever Beam with Uniform Load
+    - **Beam Length (L):** 5 meters
+    - **Uniform Load (w):** 2000 N/m
+    - **Modulus of Elasticity (E):** 200 GPa
+    - **Moment of Inertia (I):** 5 x 10^-6 m^4
+
+    **Calculation:**
+    \[
+    \delta = \frac{5 w L^4}{384 E I}
+    \]
+    **Result:** The deflection is approximately 2.17 mm.
+    """)
+
+elif page == "About":
+    st.title("About")
+    st.write("This app was developed to assist students in learning and applying the principles of beam deflection. It provides accurate calculations and educational resources to enhance understanding.")
        
 
 

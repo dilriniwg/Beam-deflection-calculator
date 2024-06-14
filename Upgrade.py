@@ -112,7 +112,7 @@ elif page == "Beam Deflection Calculator":
         <style>
         .stImage > img {
             display: block;
-            margin-left: auto;
+            margin-left: 200px;
             margin-right: auto;
             margin-top: 20px; /* Adjust the top margin as needed */
         }
@@ -292,6 +292,7 @@ elif page == "Examples":
     \[
     \delta = \frac{5000 \times 10^3}{48 \times 210 \times 10^9 \times 8.5 \times 10^{-6}}
     \]
+
     **Result:** The deflection is approximately 0.28 mm.
 
     #### Example 2: Cantilever Beam with Uniform Load
@@ -304,6 +305,7 @@ elif page == "Examples":
     \[
     \delta = \frac{5 w L^4}{384 E I}
     \]
+
     **Result:** The deflection is approximately 2.17 mm.
     """)
 

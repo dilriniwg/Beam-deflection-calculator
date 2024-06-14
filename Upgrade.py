@@ -112,7 +112,7 @@ elif page == "Beam Deflection Calculator":
         <style>
         .stImage > img {
             display: block;
-            margin-left: 200px;
+            margin-left: auto;
             margin-right: auto;
             margin-top: 20px; /* Adjust the top margin as needed */
         }
@@ -310,7 +310,3 @@ elif page == "Examples":
 elif page == "About":
     st.title("About")
     st.write("This app was developed to assist students in learning and applying the principles of beam deflection. It provides accurate calculations and educational resources to enhance understanding.")
-       
-
-
-   
